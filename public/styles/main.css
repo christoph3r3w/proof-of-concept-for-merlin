@@ -166,3 +166,42 @@ article.mainGrid{
 }
 
 
+/* //////////////////////// - Sidebar */
+
+section:has(aside){
+	/* outline: solid red; */
+	position: absolute;
+	width: 40%;
+	inset-block: 8%;
+	/* inset-inline: 5%; */
+	right: 5%;
+
+	display: grid;
+	grid-auto-flow: column;
+	gap: 2%;
+}
+
+aside{
+	background-color: palegreen;
+	outline: solid red;
+	transition: .9s cubic-bezier(0.6, -0.28, 0.35, 0.57);
+	transition-property: opacity,transform;
+	transform-origin: right;
+	z-index: 1;
+}
+
+.pageOne{
+
+	&:has(.table:hover) .aside_1{
+		transform: rotatey(-40deg);
+		background-color: palevioletred;
+	}
+	
+	&:has(.mainGrid:hover) .aside_1{
+	/* opacity: 0; */
+	transform: rotatey(-180deg);
+	z-index: 0;
+}
+
+
+}
