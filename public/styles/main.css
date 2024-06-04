@@ -1,3 +1,38 @@
+*,
+*::before,
+*::after,
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /* appearance: none; */
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+
+
+body{
+	scrollbar-gutter: stable;
+	/* position: relative; */
+	/* width: 100%;
+	height: 100%; */
+
+}
+
+main.pageOne{
+	/* display: flex; */
+	position:relative;
+	background-color:  palegoldenrod;
+	height: 100dvh;
+	width: 100dvw;
+}
+
+
+
+/*//////////////// tabel of mixing */
+
 .table{
 	position: absolute;
 	top: 8%;
