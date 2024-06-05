@@ -9,6 +9,7 @@ html {
   /* appearance: none; */
   text-decoration: none;
   scroll-behavior: smooth;
+  perspective: 1000px;
 }
 
 
