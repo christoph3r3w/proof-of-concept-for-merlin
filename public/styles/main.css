@@ -28,6 +28,9 @@ main.pageOne{
 	background-color:  palegoldenrod;
 	height: 100dvh;
 	width: 100dvw;
+	background-image: url(/public/assests/download.png);
+	background-position: center ;
+	background-size: cover;
 }
 
 
@@ -40,14 +43,18 @@ main.pageOne{
 	right:50% ;
 	left: -16%;
 	bottom: 8%;
-	z-index: 3;
+	z-index: 0;
 	/* background-color: peachpuff; */
+	/* background-color:rgba(0, 0, 0, 0.874); */
 	/* transform: scale3d(1 ,1 , 1); */
 
+	padding:1rem;
+	color:white;
+	transition:1s;
+	gap:1rem;
+	/* perspective: 1000px; */
 	
 
-	/* background-color:rgba(0, 0, 0, 0.874); */
-	/* height:90dvh; */
 	display:grid;
 	grid-template-columns:
   
@@ -69,14 +76,6 @@ main.pageOne{
 	  1fr
 	  [side-end];
 	
-	padding:1rem;
-	/* outline:solid white; */
-	color:white;
-	/* height:100dvh; */
-	transition:1s;
-	gap:1rem;
-	
-	perspective: 1000px;
 
 	
 
