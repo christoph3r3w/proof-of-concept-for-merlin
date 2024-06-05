@@ -47,14 +47,104 @@
 			</article> 
 			
 		</section>
-		<section> 
+		<section class="menu"> 
 			<aside class="aside_1">
-				aside
+				<!-- a for-each for all the ingridients  -->
+				<ul>
+					<h2>aside 1 ingridients list</h2>
+					
+					<% array.forEach(element => { %>
+						<li></li>
+						
+						<% }) %>
+						
+						<li>
+							<details>
+								<summary><img src="" alt="">item-name-1</summary>
+								<p>description</p>
+							</details>
+						</li>
+						<li>
+							<details>
+								<summary><img src="" alt="">item-name-2</summary>
+								<p>description</p>
+							</details>
+						</li>
+						<li>
+							<details>
+								<summary><img src="" alt="">item-name-3</summary>
+								<p>description</p>
+							</details>
+						</li>
+						<li>
+							<details>
+								<summary><img src="" alt="">item-name-4</summary>
+								<p>description</p>
+							</details>
+						</li>
+						<li>
+							<details>
+								<summary><img src="" alt="">item-name-5</summary>
+								<p>description</p>
+							</details>
+						</li>
+						<li>
+							<details>
+								<summary><img src="" alt="">item-name-6</summary>
+								<p>description</p>
+							</details>
+						</li>
+						<li>
+							<details>
+								<summary><img src="" alt="">item-name-7</summary>
+								<p>description</p>
+							</details>
+						</li>
+						<li>
+							<details>
+								<summary><img src="" alt="">item-name-8</summary>
+								<p>description</p>
+							</details>
+						</li>
+						<li>
+							<details>
+								<summary><img src="" alt="">item-name-9</summary>
+								<p>description</p>
+							</details>
+						</li>
+						<li>
+							<details>
+								<summary><img src="" alt="">item-name-10</summary>
+								<p>description</p>
+							</details>
+						</li>
 
 			</aside>
 			<aside class="aside_2">
-				aside 2
+				<!-- the 3 posions that has to be made for the first level -->
+				<h2>aside 2 potions list</h2>
+				
+				
+				<ul>
+				<% for( let i = 0; i < 4; i++ ) { %>
+				<li class="item1" title="" tabindex="0">
+					<h2>potion resistence</h2>
+					<img src="./public/assests/potion-of-fire-resistance.png" alt="">
+				</li>
+				<li class="item2" title="" tabindex="0">
+					<h2>potion resistence</h2>
 
+					<img src="./public/assests/potion-of-fire-resistance.png" alt="">
+				</li>
+				<li class="item2" title="" tabindex="0">
+					<h2>potion serpent</h2>
+
+					<img src="./public/assests/serpents-elixir.png" alt="">
+				</li>
+				
+					
+				<% } %>
+				</ul>
 			</aside>
 		</section>
 
