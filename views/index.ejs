@@ -1,0 +1,132 @@
+<%- include('./partials/head') %>
+<%- include('./partials/header') %>
+
+	<main class="pageOne">
+
+
+
+		<section class="table" >
+			<article class="mainGrid" >
+
+				<img src="/assests/bed2591f723244f07bc4bf382f97103c.gif" alt="">
+				<!-- top -->
+				<div class="top top_1">
+					<label for="top_1">
+						<input type="checkbox" name="grid" id="top_1">1
+					</label>
+				</div>  
+				<div class="top top_2" >
+					<label for="top_2">
+						<input type="checkbox" name="grid" id="top_2">2
+					</label>				
+				</div>
+				<div class="top top_3" >
+					<label for="top_3">
+						<input type="checkbox" name="grid" id="top_3">3
+					</label>				
+				</div>
+				<!-- mid -->
+				<div class="mid mid_1" >
+					<label for="mid_1">
+						<input type="checkbox" name="grid" id="mid_1">4
+					</label>
+				</div>  
+
+				<div class="mid mid_2" tabindex="5" >
+				  <div> <button tabindex="5"> 5.1</button></div>
+				  <div> <button tabindex="5" > 5.2</button></div>
+				  <div> <button tabindex="5" > 5.3</button></div>
+				  <div> <button tabindex="5" > 5.4</button></div>
+				</div>
+
+				<div class="mid mid_3" >
+					<fieldset clss="block_m_3">
+						<label class="grid_itm itm_1" for="itm_m_1">
+							<input type="radio" name="item_mid_3" id="itm_m_1">6.1
+						</label>
+						<label class="grid_itm itm_2" for="itm_m_2">
+							<input type="radio" name="item_mid_3" id="itm_m_2">6.2
+						</label>
+						<label class="grid_itm itm_3" for="itm_m_3">
+							<input type="radio" name="item_mid_3" id="itm_m_3">6.3
+						</label>
+					</fieldset>
+				</div>
+				<!-- bottom -->
+				<div class="down down_1" >
+					<label for="down_1">
+						<input type="checkbox" name="grid" id="down_1">7
+					</label>
+				</div>  
+				<div class="down down_2" >
+					<label for="down_2">
+						<input type="checkbox" name="grid" id="down_2">8
+					</label>
+				</div>
+				<div class="down down_3">
+					<!-- <input type="checkbox" name="grid" id="down_3">9 -->
+					 <!-- items block 9 -->
+					<fieldset clss="block_d_3">
+							<label class="grid_i i_1" for="item_d_1">
+								<input type="radio" name="item" id="item_d_1">9.1
+							</label>
+							<label class="grid_i i_2" for="item_d_2">
+								<input type="radio" name="item" id="item_d_2">9.2
+							</label>
+							<label class="grid_i i_3" for="item_d_3">
+								<input type="radio" name="item" id="item_d_3">9.3
+							</label>
+					</fieldset>
+				</div>
+			</article> 
+			
+		</section>
+		<section class="menu"> 
+			<aside class="aside_1">
+				<!-- a for-each for all the ingridients  -->
+				<ul>
+					<h2>aside 1 ingridients list</h2>
+					<!-- <img src="/assests/0b9c9d2c4473a24044ab2baec8db5888.jpg" alt=""> -->
+
+					<% ingredients.forEach(ingredient => { %>
+						<li tabindex="0">
+							
+							<p><%= ingredient.name %></p>
+							<img src="<%= ingredient.asset %>" alt="<%= ingredient.name %>" width="100" height="100">						
+							<p><%= ingredient.id %></p>
+							<p><%= ingredient.description %></p>
+						</li>
+					<% }) %>
+						
+				</ul>
+
+			</aside>
+			<aside class="aside_2">
+				<!-- the 3 posions that has to be made for the first level -->
+				<h2>aside 2 potions list</h2>
+				
+				
+				<ul>
+					<% potions.slice(2, 5).forEach(postion => { %>
+
+				<li class="item1" title="<%= postion.name %>" rarity="<%= postion.rarity %>" tabindex="0">
+					<h2><%= postion.name %></h2>
+					<img src="<%= postion.asset %>" >
+					<p><%= postion.description %></p>
+				</li>
+
+				<!-- <li class="item2" title="" tabindex="0">
+					<h2>potion serpent</h2>
+
+					<img src="./public/assests/serpents-elixir.png" alt="">
+				</li>
+				 -->
+					
+				<% }) %>
+				</ul>
+			</aside>
+		</section>
+
+	</main>
+	
+<%- include('./partials/foot') %>
