@@ -262,6 +262,31 @@ aside{
 	}
 }
 /* //////////// sidebar ipotions list  */
+/* //////// css item select for aside 1  */
+body:has(.aside_1 ul > li:nth-last-of-type(n)[data-value="0"]:is(:hover, :focus-within))  .mainGrid  label[data-value="0"]{
+	position: relative;
+	background-color: palegoldenrod;
+	box-shadow: 1px 1px 77px 90px rgba(238, 232, 170, 0.511);
+	animation: float 3s .5s;
+} 
+/* body:has(.aside_1 ul > li:nth-last-of-type(n)[data-value="1"]:hover)  .mainGrid  label[data-value="1"]{
+	background-color: powderblue;
+	box-shadow: 1px 1px 77px 90px rgba(176, 224, 230, 0.377);
+	animation: float 3s .5s;
+}  */
+/* body:has(.aside_1 ul > li:nth-last-of-type(n)[data-value="2"]:hover)  .mainGrid  label[data-value="2"]{
+	background-color: palevioletred;
+	box-shadow: 1px 1px 77px 90px rgba(216, 112, 147, 0.534);
+	animation: float 3s .5s;
+}  */
+
+.itemSelect{
+	background-color: powderblue;
+	box-shadow: 1px 1px 77px 90px rgba(176, 224, 230, 0.377);
+	animation: float 1s .5s;
+	transition: .5s;
+}
+
 
 .aside_2{
 	position: relative;
