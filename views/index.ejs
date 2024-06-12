@@ -1,66 +1,67 @@
 <%- include('./partials/head') %>
 <%- include('./partials/header',{header: ''}) %>
 
-	<main class="pageOne">
+
+
+	<main class="page " style="--ingridient_id:<%= ingredients.id %>">
 
 
 
 		<section class="table" >
-			<form action="/brew/1" method="post" class="mainGrid" >
+			<form action="/brew" method="post" class="mainGrid" >
 
 				<img src="/assests/bed2591f723244f07bc4bf382f97103c.gif" alt="">
 				<!-- top -->
 				<div class="top top_1">
 					<fieldset class="block_t_1">
-						<%- include('./partials/grid-block',{start:"2",end:"6",gridName:"_t_1"}) %>
+						<%- include('./partials/grid-block',{start:"",end:"",gridName:"_t_1"}) %>
 
 					</fieldset>
 				</div>  
 				<div class="top top_2" >
 					<fieldset class="block_t_2">
-						<%- include('./partials/grid-block',{start:"6",end:"10",gridName:"_t_2"}) %>
+						<%- include('./partials/grid-block',{start:"",end:"",gridName:"_t_2"}) %>
 
 					</fieldset>				
 				</div>
 				<div class="top top_3" >
 					<fieldset class="block_t_3">
-						<%- include('./partials/grid-block',{start:"10",end:"-7",gridName:"_t_3"}) %>
+						<%- include('./partials/grid-block',{start:"",end:"",gridName:"_t_3"}) %>
 
 					</fieldset>				
 				</div>
 				<!-- mid -->
 				<div class="mid mid_1" >
 					<fieldset class="block_m_1">
-						<%- include('./partials/grid-block',{start:"9",end:"10",gridName:"_m_1"}) %>
+						<%- include('./partials/grid-block',{start:"",end:"",gridName:"_m_1"}) %>
 
 					</fieldset>				
 				</div>  
 
 				<div class="mid mid_2" tabindex="5" >
-				  <div class="item i1"> <button tabindex="5"> 5.1</button></div>
+				  <div class="item i1"> <button tabindex="5" > 5.1</button></div>
 				  <div class="item i2"> <button tabindex="5" > 5.2</button></div>
 				  <div class="item i3"> <button tabindex="5" > 5.3</button></div>
-				  <div	class="item i4"> <button tabindex="5" > 5.4</button></div>
-				  <div> <a href="/brew/1" tabindex="5" > 5.5</a></div>
+				  <div class="item i4"> <button tabindex="5" > 5.4</button></div>
+				  <div> <a href="/brew" tabindex="5" > 5.5</a></div>
 				</div>
 
 				<div class="mid mid_3" >
 					<fieldset class="block_m_3">
-						<%- include('./partials/grid-block',{start:"9",end:"15",gridName:"_m_3"}) %>
-
+						<%- include('./partials/grid-block',{start:"",end:"",gridName:"_m_3"}) %>
 					</fieldset>				
 				</div>
 				<!-- bottom -->
 				<div class="down down_1" >
 					<fieldset class="block_d_1">
-						<%- include('./partials/grid-block',{start:"12",end:"15",gridName:"_d_1"}) %>
+						<%- include('./partials/grid-block',{start:"",end:"",gridName:"_d_1"}) %>
 
 					</fieldset>				
 				</div> 
 
 				<div class="down down_2" >
 					<fieldset class="block_d_2">
-						<%- include('./partials/grid-block',{start:"2",end:"6",gridName:"_d_2"}) %>
+						<%- include('./partials/grid-block',{start:"",end:"",gridName:"_d_2"}) %>
 
 					</fieldset>				
 				</div>
@@ -71,7 +72,7 @@
 					
 
 					<fieldset class="block_d_3">
-						<%- include('./partials/grid-block',{start:"0",end:"5",gridName:"_d_3"}) %>
+						<%- include('./partials/grid-block',{start:"",end:"",gridName:"_d_3"}) %>
 
 					</fieldset>				
 

@@ -3,13 +3,13 @@
 
 
 
-	<main class="pageOne" style="--ingridient_id:<%= ingredients.id %>">
+	<main class="page pageOne" style="--ingridient_id:<%= ingredients.id %>">
 
 
 
 		<section class="table" >
-			<form action="/views/brew.ejs" method="post" class="mainGrid" >
-
+			<form action="/brew" method="post" class="mainGrid" >
+				<!-- <input type="hidden" name="current-level" value="1"> -->
 				<img src="/assests/bed2591f723244f07bc4bf382f97103c.gif" alt="">
 				<!-- top -->
 				<div class="top top_1">
@@ -26,7 +26,7 @@
 				</div>
 				<div class="top top_3" >
 					<fieldset class="block_t_3">
-						<%- include('./partials/grid-block',{start:"10",end:"-7",gridName:"_t_3"}) %>
+						<%- include('./partials/grid-block',{start:"17",end:"25",gridName:"_t_3"}) %>
 
 					</fieldset>				
 				</div>
@@ -79,21 +79,23 @@
 					</fieldset>				
 
 				</div>
-			</article> 
+			</form> 
 			
 		</section>
+		<!-- menu -->
 		<section class="menu"> 
 			<aside class="aside_1">
 				<!-- a for-each for all the ingridients  -->
-				<h2>aside 1 ingridients list</h2>
+				<h2> Ingredients list</h2>
 				<ul>
-					<%- include('./partials/aside-1',{start:"0",end:"-1"}) %>
+					<%- include('./partials/aside-1',{start:"0",end:"25"}) %>
 				</ul>
 
 			</aside>
 			<aside class="aside_2">
 				<!-- the 3 posions that has to be made for the first level -->
-				<h2>aside 2 potions list</h2>
+				 
+				<h2> Potions list</h2>
 				
 				<ul>
 					<%- include('./partials/aside-2',{start:"2",end:"5"}) %>
