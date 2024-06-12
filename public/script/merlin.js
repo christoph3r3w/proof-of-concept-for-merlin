@@ -1,5 +1,6 @@
 
 const ingredient = document.querySelectorAll(".aside_1 ul > li");
+const postions = document.querySelectorAll(".aside_2 ul > li");
 
 function MouseOver1(event){
 	const liValue = event.currentTarget.value;
@@ -49,3 +50,8 @@ if(ingredient){
 		li.addEventListener("mouseout", Mouseout1);
 	})
 
+	postions.forEach(li =>{
+		li.addEventListener("mouseover", MouseOver2);
+		// li.addEventListener("mouseout", Mouseout);
+	})
+}
