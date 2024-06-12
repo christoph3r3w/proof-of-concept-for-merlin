@@ -1,0 +1,108 @@
+<%- include('./partials/head') %>
+<%- include('./partials/header',{header:'page3'}) %>
+
+<main class="page pageThree" style="--ingridient_id:<%= ingredients.id %>">
+
+
+
+	<section class="table" >
+		<form action="/brew" method="post" class="mainGrid" >
+
+			<img src="/assests/bed2591f723244f07bc4bf382f97103c.gif" alt="">
+			<!-- top -->
+			<div class="top top_1">
+				<fieldset class="block_t_1">
+					<%- include('./partials/grid-block',{start:"2",end:"6",gridName:"_t_1"}) %>
+
+				</fieldset>
+			</div>  
+			<div class="top top_2" >
+				<fieldset class="block_t_2">
+					<%- include('./partials/grid-block',{start:"6",end:"10",gridName:"_t_2"}) %>
+
+				</fieldset>				
+			</div>
+			<div class="top top_3" >
+				<fieldset class="block_t_3">
+					<%- include('./partials/grid-block',{start:"17",end:"25",gridName:"_t_3"}) %>
+
+				</fieldset>				
+			</div>
+			<!-- mid -->
+			<div class="mid mid_1" >
+				<fieldset class="block_m_1">
+					<%- include('./partials/grid-block',{start:"9",end:"-2",gridName:"_m_1"}) %>
+
+				</fieldset>				
+			</div>  
+
+			<div class="mid mid_2" tabindex="5" >
+			  <div class="item i1"> <button tabindex="5"> 5.1</button></div>
+			  <div class="item i2"> <button tabindex="5" > 5.2</button></div>
+			  <div  class="item i3"> <button tabindex="5" > 5.3</button></div>
+			  <div class="item i4"> <button tabindex="5" > 5.4</button></div>
+			  <div > <a href="/" tabindex="5" > -5.5</a></div>
+
+			</div>
+
+			<div class="mid mid_3" >
+				<fieldset class="block_m_3">
+					<%- include('./partials/grid-block',{start:"9",end:"15",gridName:"_m_3"}) %>
+
+				</fieldset>				
+			</div>
+			<!-- bottom -->
+			<div class="down down_1" >
+				<fieldset class="block_d_1">
+					<%- include('./partials/grid-block',{start:"12",end:"15",gridName:"_d_1"}) %>
+
+				</fieldset>				
+			</div> 
+
+			<div class="down down_2" >
+				<fieldset class="block_d_2">
+					<%- include('./partials/grid-block',{start:"2",end:"6",gridName:"_d_2"}) %>
+
+				</fieldset>				
+			</div>
+
+			<div class="down down_3">
+				<!-- <input type="checkbox" name="grid" id="down_3">9 -->
+				 <!-- items block 9 -->
+				
+
+				<fieldset class="block_d_3">
+					<%- include('./partials/grid-block',{start:"0",end:"5",gridName:"_d_3"}) %>
+
+				</fieldset>				
+
+			</div>
+		</form> 
+	</section>
+
+	<section class="menu"> 
+		<aside class="aside_1">
+			<!-- a for-each for all the ingridients  -->
+			<h2> Ingredients list</h2>
+			<ul>
+				<%- include('./partials/aside-1',{start:"0",end:"25"}) %>
+			</ul>
+
+		</aside>
+		<aside class="aside_2">
+			<!-- the 3 posions that has to be made for the first level -->
+			
+			<h2> Potions list</h2>
+			
+			<ul>
+				<%- include('./partials/aside-2',{start:"9",end:"14"}) %>
+			</ul>
+
+		</aside>
+	</section>
+
+</main>
+
+
+
+<%- include('./partials/foot') %>
