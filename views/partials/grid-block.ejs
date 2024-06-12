@@ -1,6 +1,6 @@
 <% ingredients.slice(start,end).forEach(ingredient => { %>
-		<label class="grid_i i_1" for="item_t_<%= ingredient.id %>" data-value="<%= ingredient.id %>" data-color="<%= ingredient.color.hex %>" >
-			<input type="radio" name= <%= gridName %> id="item_t_<%= ingredient.id %>">
+		<label class="grid_i i_1" for="item_t_<%= ingredient.id %>_<%= gridName %>" data-value="<%= ingredient.id %>" data-color="<%= ingredient.color.hex %>" >
+			<input type="radio" value="<%= ingredient.id %>" name=<%= gridName %> id="item_t_<%= ingredient.id %>_<%= gridName %>" >
 			<img src="<%- ingredient.asset %>" width="30">
 		</label>
 <% }) %>
