@@ -14,3 +14,91 @@
 						<% }) %>
 						
 					</fieldset>
+
+
+-------------------------------------------   JS   --------------------------------------------
+
+// if ( matchFound == true && JSON.stringify(sortArray(archive.map(Number))) === JSON.stringify([2,3,4])){ 
+				// 		view = 'brew2';
+				// 		bodycounter++
+				// 		console.log("level 1 cleared");
+				// } else if(matchFound == true && archive.length > 0 ){
+					// 		view = 'brew';
+					// }
+					
+					
+					
+					
+					// } else if (req.body['current-level'] == '2' && ..){
+						// 	view = 'brew3';
+						// } else if () {
+							// 	..
+							// }
+							
+			console.log(matchFound);			
+			let view = 'brew';
+			// switch (true) {
+			// 	case (matchFound == true ): 
+			// 		view = 'brew';
+			// 		console.log('next one',archive.length);
+				// 	break;
+				// case ( matchFound == true && JSON.stringify(sortArray(archive.map(Number))) === JSON.stringify([2,3,4])): 
+				// 	view = 'brew2';
+				// 	bodycounter++;
+				// 	archive.length = 0 ;
+				// 	console.log("level 1 cleared");
+				// 	break;
+				// case (matchFound == true && bodycounter == 1 && 0 < archive.length < 3 ): 
+				// 	view = 'brew2';
+				// 	break;
+				// case ( matchFound == true && bodycounter == 1 && JSON.stringify(sortArray(archive.map(Number))) === JSON.stringify([5,6,7])): 
+				// 	view = 'brew3';
+				// 	bodycounter++;
+				// 	archive.length = 0;
+				// 	console.log("level 2 cleared");
+				// 	break;
+				// case (matchFound == true && bodycounter == 2 && 0 < archive.length < 5 ): 
+				// 	view = 'brew3';
+				// 	break;
+				// case ( matchFound == true && bodycounter == 2 && JSON.stringify(sortArray(archive.map(Number))) === JSON.stringify([8,9,10,11,12])): 
+				// 	view = 'brew4';
+				// 	bodycounter++;
+				// 	archive.length = 0;
+				// 	console.log("level 3 cleared");
+					// break;
+				// case ( matchFound == true && archive.length == 0  ): 
+				// case ( matchFound == false  ): 
+			// 	default:
+			// 		// view = 'brew/nasty-potion';
+			// 		bodycounter = 0;
+			// 		archive.length = 0;
+			// 		console.log('failed');
+
+			// }
+			
+			res.render(view,{potionsId : PotionId, ingredients : ingredientsData, potions : potionsData })
+
+			console.log(`sorted ${sortArray(archive)}`,`arrayLegth ${archive.length}`);
+		  
+
+		// if (matchFound) {
+		// 	// level  2
+		// 	if (archive.length === 3 && sortArray(archive) == [2,3,4]){ 
+		// 		res.render("brew2",{potionsId : PotionId, ingredients : ingredientsData, potions : potionsData })
+		// 	}else{
+		// 		res.render("brew",{potionsId : PotionId, ingredients : ingredientsData, potions : potionsData })
+		// 		}
+		// 	// level 3
+		// 	if (archive.length === 3 && sortArray(archive) == [5,6,7]){
+		// 		res.render("brew3",{potionsId : PotionId, ingredients : ingredientsData, potions : potionsData })
+		// 	} else {
+		// 		res.render("brew2",{potionsId : PotionId, ingredients : ingredientsData, potions : potionsData })
+		// 	}
+		// 	// level 4
+		// 	if (archive.length === 5 && sortArray(archive) == [8,9,10,11,12]){
+		// 		res.render("brew4",{potionsId : PotionId, ingredients : ingredientsData, potions : potionsData })
+		// 		} else {
+		// 			res.render("brew3",{potionsId : PotionId, ingredients : ingredientsData, potions : potionsData })
+		// 		}
+			
+		// 	console.log(`sorted ${sortArray(archive)}`,`arrayLegth ${archive.length}`);
