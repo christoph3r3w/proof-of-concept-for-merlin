@@ -232,19 +232,20 @@ main{
 
 }
 
-.table:has(.top:hover,:focus,:focus-visible){
+/* //////////////////////// top row  */
+.table{
       
-	&:has(.top_1:hover,:focus){
-        background-color:#21C979;
+	&:has(.top_1:is(:hover, :focus-within)){
+        /* background-color:#21C979; */
 		grid-template-columns:2.5fr 1fr 1fr;
 		grid-template-rows:2.5fr 1fr 1fr;
-	  }
-	&:has(.top_2:hover,:focus){
-        background-color:blue;
+	  }:is(:hover, :focus-within)
+	&:has(.top_2:is(:hover, :focus-within)){
+        /* background-color:blue; */
 		grid-template-columns: 1fr 2.5fr 1fr;
 		 grid-template-rows:2.5fr 1fr 1fr;
 	  }
-	&:has(.top_3:hover,:focus){
+	&:has(.top_3:is(:hover, :focus-within)){
 		background-color:#EDA48D;
 		grid-template-columns: 1fr  1fr 2.5fr;
 		grid-template-rows:2.5fr 1fr 1fr;
@@ -252,37 +253,39 @@ main{
 	 
 	}
 
-.table:has(.mid:hover,:focus,:focus-visible){
-		&:has(.mid_1:hover,:focus){
-          background-color:green;
+/* ////////////////// mid row */
+.table{
+
+		&:has(.mid_1:is(:hover, :focus-within)){
+          /* background-color:green; */
 		  grid-template-columns:2.5fr 1fr 1fr;
 		  grid-template-rows: 1fr 2.5fr 1fr;
 		}
-	  &:has(.mid_2:hover,:focus){
-		  background-color:blue;
+	  &:has(.mid_2:is(:hover, :focus-within)){
+		  /* background-color:blue; */
 		  grid-template-columns: 1fr 5fr 1fr;
 		  grid-template-rows: 1fr 5fr 1fr;
 				
 		}
-	  &:has(.mid_3:hover,:focus){
-          background-color:yellow;
+	  &:has(.mid_3:is(:hover, :focus-within)){
+          /* background-color:yellow; */
 		  grid-template-columns: 1fr  1fr 2.5fr;
 		  grid-template-rows: 1fr 2.5fr 1fr;
 		}
 	  }
-
-.table:has(.down:hover,:focus,:focus-visible){
-	&:has(.down_1:hover,:focus){
-	 background-color:green;
+/* //////////////// lower row */
+.table{
+	&:has(.down_1:is(:hover, :focus-within)){
+	 /* background-color:green; */
 	 grid-template-columns:2.5fr 1fr 1fr;
 	 grid-template-rows: 1fr  1fr 2.5fr;
    }
- &:has(.down_2:hover,:focus){
-	 background-color:blue;
+ &:has(.down_2:is(:hover, :focus-within)){
+	 /* background-color:blue; */
 	 grid-template-columns: 1fr 2.5fr 1fr;
 	  grid-template-rows: 1fr  1fr 8fr;
    }
- &:has(.down_3:hover,:focus){
+ &:has(.down_3:is(:hover, :focus-within)){
 	 
 	 grid-template-columns: 1fr  1fr 2.5fr;
 	  grid-template-rows: 1fr  1fr 2.5fr;
@@ -408,6 +411,58 @@ main{
 } */
 
 /* ///////////////cauldron */
+.mid_2{
+	position: relative;
+}
+
+.item {
+
+	/* outline:solid red; */
+	position: absolute;
+	top: 45%;
+	left: 48%;
+	width: 50px;
+	height: 50px;
+	background: #0091EA;
+	transform: translateX(-100px);
+	/* for text */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 30px;
+	color: #FFF;
+	/* animation: arc-move-anim 14s linear infinite ; */
+}
+
+.i1 {
+	--animation-p:-100px;
+	--animation-m:translateX(var(--animation-p)) ;
+	--animation-t: 1turn;
+	--animation-te: calc(var(--animation-t) * -1);
+}
+.i2 {
+	--animation-p:100px;
+	--animation-m:translateX(var(--animation-p)) ;
+	--animation-t: 1turn;
+	--animation-te: calc(var(--animation-t) * -1);
+}
+.i3 {
+	--animation-p:-100px;
+	--animation-m:translateY(var(--animation-p)) ;
+	--animation-t: 360deg;
+	--animation-te: calc(var(--animation-t) * -1);
+}
+.i4 {
+	--animation-p:100px;
+	--animation-m:translateY(var(--animation-p)) ;
+	--animation-t: 360deg;
+	--animation-te: calc(var(--animation-t) * -1);
+}
+
+
+
+
+
 
 /* //////////////////////// - Sidebar */
 
