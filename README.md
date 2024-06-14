@@ -1,30 +1,30 @@
-> _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
+# Book of potions
+https://github.com/christoph3r3w/proof-of-concept-for-merlin/assets/144007933/bff6ba27-c563-486c-84d8-4e283fb65250
 
-# Titel
-<!-- Geef je project een titel en schrijf in één zin wat het is -->
-
-## Inhoudsopgave
-
-  * [Beschrijving](#beschrijving)
-  * [Gebruik](#gebruik)
-  * [Kenmerken](#kenmerken)
-  * [Installatie](#installatie)
-  * [Bronnen](#bronnen)
-  * [Licentie](#licentie)
 
 ## Beschrijving
-<!-- Bij Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
-<!-- Voeg een mooie poster visual toe 📸 -->
-<!-- Voeg een link toe naar Github Pages 🌐-->
+A potion mixing game for merlin studios.
+there are three levels where you learn about some ingredients, search where the ingridients can be, and you make the potions.
 
 ## Gebruik
-<!-- Bij Gebruik staat de user story, hoe het werkt en wat je er mee kan. -->
+As a curious alchemist, I want a comprehensive website where I can explore and experiment with various ingredients to brew unique potions. I want to learn about different ingredients, their properties, and how to combine them to create potions with different effects. The website should emphasize creativity, accessibility, and feature captivating animations, designs, and effects to showcase the digital magic. Additionally, I would like an overview page of all potions with filtering options based on different criteria.
 
 ## Kenmerken
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framwork of library gebruikt? -->
+for this project i used 
+- node
+- express.js
+- JavaScript
+- CSS
+- HTML
 
 ## Installatie
-<!-- Bij Instalatie staat hoe een andere developer aan jouw repo kan werken -->
+- npm install
+- npm i nodemon
+
+  ***
+
+> _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
+
 
 ## Bronnen
 
