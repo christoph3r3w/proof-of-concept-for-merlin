@@ -744,3 +744,62 @@ body:has(.aside_2 ul > li:nth-of-type(3):is(:hover, :focus-within))  .mainGrid  
 		transform: translateY(0px) rotateY(-31deg) rotateX(-5deg) rotateZ(22deg) scale(1.1) skew(24deg, -15deg);
 	  }
 }
+
+@keyframes float-1 {
+	0% {
+		transform: translateY(0px) rotateY(-31deg) rotateZ(22deg) scale(1.1) skew(24deg, -15deg);
+	  }
+	  15%,60%,85%{
+		transform: translateY(3px) rotateY(-33deg) rotateZ(22deg) scale(1.1) skew(24deg, 15deg);
+	  }
+	25%,75%{
+		transform: translateY(-13px) rotateY(-35deg) rotateZ(22deg) scale(1.1) skew(24deg, 15deg);
+	}
+
+	  50% {
+		transform: translateY(-10px) rotateY(-31deg) rotateZ(22deg) scale(1.1) skew(24deg, 15deg);
+	  }
+	  100% {
+		transform: translateY(0px) rotateY(-31deg) rotateZ(22deg) scale(1.1) skew(24deg, -15deg);
+	  }
+}
+
+/* slow rotate */
+@keyframes slow-rotate {
+
+	from{
+		transform: rotateZ(0deg) ;
+	}
+	to{
+		transform: rotateZ(360deg);
+	}
+}
+
+/* arc moving  */
+
+@keyframes arc {
+	0%{
+	  transform: translate(-50%, -50%) rotate(0deg);
+	}
+	100%{
+	  transform: translate(-50%, -50%) rotate(180deg);
+	}
+  }
+
+  /* cauldron stirring  */
+
+  @keyframes arc-move-anim {
+	0% {
+		transform: rotate(0deg) var(--animation-m) rotate(0deg);
+	}
+
+	/* 50%{
+		transform: rotate(0deg) var(--animation-m) rotate(0deg);
+	} */
+
+	100% {
+		transform: rotate(var(--animation-t)) var(--animation-m) rotate(var(--animation-te));
+	}
+}
+
+
