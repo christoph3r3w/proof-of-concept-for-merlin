@@ -31,6 +31,8 @@ body:has(.start){
 
 	}
 
+	&:has(.mid_2) 
+
 	.mainGrid > div:not(:nth-of-type(5)) {
 		opacity: .5;
 		pointer-events: none;
@@ -64,17 +66,21 @@ body:has(.start){
 
 	.menu{
 		pointer-events: none;
+		transform-origin: center;
 		transform: rotate(90deg) !important;
 		inset-block: unset;
-		right:unset;
+		/* right:unset;
+		left: -2%; */
+		inset-inline: -3%;
 		top: -42%;
-		left: 32%;
 		z-index: 100 !important;
+		width: 100%;
 
 	}
 
 	.menu .aside_1{
 		transform: rotatey(-180deg)  scale(.98);
+		transform-origin: right;
 
 	}
 	
@@ -98,7 +104,7 @@ body:has(.start){
 		/* height: fit-content; */
 		width: 100%;
 		transform: rotate(-90deg) scale(3.5);
-		font-size: 2.5rem;
+		font-size: 100%;
 	}
 
 }
