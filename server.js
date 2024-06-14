@@ -14,16 +14,11 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 
 // merlin book of potion api 
-
 const apiUrl = "https://potion-api-jet.vercel.app/";
 
 // all ingridients endpoint
-
 const IngrUrl = `${apiUrl}ingredients`;
-
 const potionsUrl = `${apiUrl}potions`;
-
-// new postions storage
 
 let archive = app.locals.storage = [];
 // archive = sortArray(archive);
@@ -116,80 +111,8 @@ app.post("/brew",(req,res) =>{
 			}
 
 			} 
-			let view = 'brew/nasty-potion';
-			if(matchFound){
-				// level  1
-				if( matchFound == true && bodycounter == 0 && JSON.stringify(sortArray(archive.map(Number))) === JSON.stringify([2,3,4])){ 
-					view = 'brew2';
-					bodycounter++;
-					archive.length = 0 ;
-					console.log("level 1 cleared");
-				}else if(matchFound == true && bodycounter == 0 && archive.length < 3){
-					view = 'brew';
-					console.log('next one');			
-				}
-				// level 2
-				if( matchFound == true && bodycounter == 1 && JSON.stringify(sortArray(archive.map(Number))) === JSON.stringify([5,6,7])){ 
-					view = 'brew3';
-					bodycounter++;
-					archive.length = 0 ;
-					console.log("level 2 cleared");
-				}else if(matchFound == true && bodycounter == 1 && archive.length < 3){
-					view = 'brew2';
-					console.log('next one');			
-				}
-				// level 3
-				if( matchFound == true && bodycounter == 2 && JSON.stringify(sortArray(archive.map(Number))) === JSON.stringify([8,9,10,11,12]) || archive.length == 3){ 
-					view = 'brew4';
-					bodycounter++;
-					archive.length = 0 ;
-					console.log("level 3 cleared");
-				}else if(matchFound == true && bodycounter == 2 && archive.length < 3){
-					view = 'brew3';
-					console.log('next one');			
-				}
-		} else {
-			view = view;
-			archive.length = 0
-			bodycounter = 0 ;
 		}
-			console.log(ingredient,`is there a match: ${matchFound}`,`bodycounter ${bodycounter}`);
-			console.log(`archive content =  ${archive} sorted = ${sortArray(archive)}`,`arrayLegth = ${archive.length}`,);
-			res.render(view,{potionsId : PotionId, ingredients : ingredientsData, potions : potionsData })
 
-		  
-		// if (matchFound == false) {
-		// 		res.redirect(301, 'brew/nasty-potion')
-		// 	console.log(`sorted ${sortArray(archive)}`,`arrayLegth ${archive.length}`);
-		//   }
-
-		// if (matchFound) {
-		// 	// level  2
-		// 	if (archive.lengt === 3 && sortArray(archive) == [2,3,4]){ 
-		// 		res.render("brew2",{potionsId : PotionId, ingredients : ingredientsData, potions : potionsData })
-		// 	}else{
-		// 		res.render("brew",{potionsId : PotionId, ingredients : ingredientsData, potions : potionsData })
-		// 		}
-		// 	// level 3
-		// 	if (archive.lengt === 3 && sortArray(archive) == [5,6,7]){
-		// 		res.render("brew3",{potionsId : PotionId, ingredients : ingredientsData, potions : potionsData })
-		// 	} else {
-		// 		res.render("brew2",{potionsId : PotionId, ingredients : ingredientsData, potions : potionsData })
-		// 	}
-		// 	// level 4
-		// 	if (archive.lengt === 5 && sortArray(archive) == [8,9,10,11,12]){
-		// 		res.render("brew4",{potionsId : PotionId, ingredients : ingredientsData, potions : potionsData })
-		// 		} else {
-		// 			res.render("brew3",{potionsId : PotionId, ingredients : ingredientsData, potions : potionsData })
-		// 		}
-			
-		// 	console.log(`sorted ${sortArray(archive)}`,`arrayLegth ${archive.length}`);
-
-		  
-		// }else {
-		// 	res.redirect(301, 'brew/nasty-potion')
-		// 	console.log(`sorted ${sortArray(archive)}`,`arrayLegth ${archive.length}`);
-		//   }
 	})
 })
 	  
