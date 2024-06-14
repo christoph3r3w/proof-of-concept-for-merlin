@@ -63,6 +63,17 @@ app.get("/brew", (req, res) => {
 			res.render("brew", { ingredients : ingredientsData, potions : potionsData });
 			bodycounter = bodycounter > 0 ? 0 : bodycounter;
 			archive.length = 0
+// nasty brew
+app.get("/brew/bad-brew", (req, res) => {
+	Promise.all([
+		fetchJson(IngrUrl),
+		fetchJson(potionsUrl),
+	])
+		.then(([ingredientsData, potionsData]) => {
+			res.render("bad-brew", { ingredients : ingredientsData, potions : potionsData });
+			bodycounter = bodycounter > 0 ? 0 : bodycounter;
+			archive.length = 0;
+			collection;
 			console.log("page1 success" ,`bodycounter ${bodycounter}`);
 		})
 		.catch(err => alert("home failed"));
