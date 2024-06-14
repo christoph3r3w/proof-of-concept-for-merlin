@@ -12,6 +12,97 @@ html {
   perspective: 1000px;
 }
 
+/*////////////////// controls for pages */ 
+body:has(.start){
+	overflow: hidden;
+	.table{
+		inset-inline:4%;
+		inset-block: -5%;
+		/* outline: solid palegoldenrod; */
+	}
+
+	.table:hover .mainGrid{
+		translate: none;
+		translate: 0 5%;
+	 }
+
+	.mainGrid{
+		transform: rotateY(0deg) rotateX(50deg) scale(.8);
+
+	}
+
+	.mainGrid > div:not(:nth-of-type(5)) {
+		opacity: .5;
+		pointer-events: none;
+	}
+
+	.mid_2 {
+		
+		.item{
+			display: none;
+		}
+		.start-btn{
+			outline: none;
+			mix-blend-mode: difference;
+			a{
+				color: white;
+				mix-blend-mode: difference;
+			}
+		}
+
+		&:hover .start-btn{
+			transform: scale(2.5) rotateX(-5deg);
+			width: 25cqw;
+			height: auto;
+			a{
+				box-shadow: 0 0 10px 10px rgb(191, 194, 218);
+				/* border-radius: 40px; */
+				
+			}
+		}
+	}
+
+	.menu{
+		pointer-events: none;
+		transform: rotate(90deg) !important;
+		inset-block: unset;
+		right:unset;
+		top: -42%;
+		left: 32%;
+		z-index: 100 !important;
+
+	}
+
+	.menu .aside_1{
+		transform: rotatey(-180deg)  scale(.98);
+
+	}
+	
+	&:has(.table:hover) .aside_1{
+		transform: rotatey(-180deg);
+		opacity: .8;
+	}
+
+	.menu .aside_2{
+		ul,h2{
+			display: none;
+		}
+	}
+
+	.menu .aside_2::after{
+		content: 'The book of potions';
+		top: 48%;
+		/* background-color: #fff; */
+		display: flex;
+		justify-content: center ;
+		/* height: fit-content; */
+		width: 100%;
+		transform: rotate(-90deg) scale(3.5);
+		font-size: 2.5rem;
+	}
+
+}
+
 
 
 body{
