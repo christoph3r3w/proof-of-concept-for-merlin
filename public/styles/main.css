@@ -29,18 +29,15 @@ body:has(.start) {
 
 	.table:hover .mainGrid {
 		translate: none;
-		translate: 0 5%;
-	 }
-
-	.mainGrid{
-		transform: rotateY(0deg) rotateX(50deg) scale(.8);
-
+		translate: 0 9%;
 	}
 
-	&:has(.mid_2) 
+	.mainGrid {
+		transform: rotateY(0deg) rotateX(50deg) scale(0.8);
+	}
 
-	.mainGrid > div:not(:nth-of-type(5)) {
-		opacity: .5;
+	&:has(.mid_2) .mainGrid > div:not(:nth-of-type(5)) {
+		opacity: 0.5;
 		pointer-events: none;
 	}
 
@@ -118,10 +115,11 @@ body:has(.start) {
 }
 
 
-body:has(.pageOne){ 
-	
-	.mainGrid > div:nth-of-type(-n + 2):not(:nth-of-type(6)):not(:nth-of-type(5)) {
-		opacity: .1;
+/* ///////////////main content  */
+body:has(.pageOne) {
+	.mainGrid
+		> div:nth-of-type(-n + 2):not(:nth-of-type(6)):not(:nth-of-type(5)) {
+		opacity: 0.1;
 		pointer-events: none;
 	}
 }
@@ -360,13 +358,7 @@ main {
 	font-size: 3rem;
 	outline: solid lightslategrey;
 
-.mainGrid div:nth-of-type(n){
-	  display:grid;
-	  place-items:center;
-	  font-size:3rem;
-	  outline:solid lightslategrey;
-	  
-	  /* position:absolute;
+	/* position:absolute;
 	  inset: 20dvw; */
 	/*   box-shadow: 0px 0px 50px 5px black; */
 
@@ -374,7 +366,8 @@ main {
 	/*   grid-column: mid; */
 }
 
-.mainGrid fieldset{
+.mainGrid fieldset {
+	position: relative;
 	filter: blur(5px);
 	transition: 0.5s ease-out;
 	display: flex;
@@ -388,8 +381,8 @@ main {
 	filter: blur(0px);
 }
 
-.mainGrid div:nth-of-type(n) label{
-	
+.mainGrid div:nth-of-type(n) label {
+	position: sticky;
 	display: flex;
 	flex: 1;
 	flex-wrap: wrap;
@@ -470,10 +463,30 @@ main {
 	--animation-te: calc(var(--animation-t) * -1);
 }
 
+.mid_2 div:has(button) {
+	width: clamp(1rem, 50%, 7rem);
+	height: clamp(1rem, 50%, 7rem);
+	border-radius: 50%;
+	outline: none !important;
 
-
-
-
+	button {
+		color: #fff;
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		font-size: clamp(1rem, 50%, 7rem);
+		background-color: transparent;
+		border: none;
+		backdrop-filter: blur(10px);
+		pointer-events: fill;
+		cursor: pointer;
+		transition: 1.2s ease-in-out;
+		&:hover {
+			background-color: #ffffff96;
+			color: #333;
+		}
+	}
+}
 
 /* //////////////////////// - Sidebar */
 
@@ -499,8 +512,8 @@ aside {
 	transition: 0.9s cubic-bezier(0.6, -0.28, 0.35, 0.57);
 	transition-property: opacity, transform;
 	transform-origin: right;
-	
-	height: clamp(52rem,100%,90dvh);
+
+	height: clamp(52rem, 100%, 90dvh);
 	width: 25rem;
 	/* backdrop-filter: blur(20px); */
 	background-image: url("/assests/6d8e9a750b08665e11dc11e8e8bdec29.jpg");
@@ -577,13 +590,6 @@ body:has(.aside_1 ul > li:nth-last-of-type(n)[data-value="0"]:is(:hover, :focus-
 	box-shadow: 1px 1px 77px 90px rgba(216, 112, 147, 0.534);
 	animation: float 3s .5s;
 }  */
-
-.itemSelect{
-	background-color: powderblue;
-	box-shadow: 1px 1px 77px 90px rgba(176, 224, 230, 0.377);
-	animation: float 1s .5s;
-	transition: .5s;
-}
 
 /* //////////// sidebar potions list  */
 
