@@ -40,81 +40,105 @@ function getUniqueValues(array) {
 
 // homepage
 app.get("/", (req, res) => {
-	Promise.all([
-		fetchJson(IngrUrl),
-		fetchJson(potionsUrl),
-	])
+	Promise.all([fetchJson(IngrUrl), fetchJson(potionsUrl)])
 		.then(([ingredientsData, potionsData]) => {
-			res.render("index.ejs", { ingredients : ingredientsData, potions : potionsData });
-			
+			res.render("index", {
+				ingredients: ingredientsData,
+				potions: potionsData,
+				collection,
+				bodycounter,
+			});
+			bodycounter = bodycounter > 0 ? 0 : bodycounter;
 
 			console.log("home success", bodycounter);
 		})
 		.catch((err) => alert("home failed"));
 });
 
-
 // first brew
 app.get("/brew", (req, res) => {
-	Promise.all([
-		fetchJson(IngrUrl),
-		fetchJson(potionsUrl),
-	])
+	Promise.all([fetchJson(IngrUrl), fetchJson(potionsUrl)])
 		.then(([ingredientsData, potionsData]) => {
-			res.render("brew", { ingredients : ingredientsData, potions : potionsData });
 			bodycounter = bodycounter > 0 ? 0 : bodycounter;
 			archive.length = 0;
 			collection;
-			console.log("page1 success" ,`bodycounter ${bodycounter}`);
+			res.render("brew", {
+				ingredients: ingredientsData,
+				potions: potionsData,
+				collection,
+				bodycounter,
+			});
+			console.log("page1 success", `bodycounter ${bodycounter}`);
 		})
 		.catch((err) => alert("home failed"));
 });
 
 // nasty brew
 app.get("/brew/bad-brew", (req, res) => {
-	Promise.all([
-		fetchJson(IngrUrl),
-		fetchJson(potionsUrl),
-	])
+	Promise.all([fetchJson(IngrUrl), fetchJson(potionsUrl)])
 		.then(([ingredientsData, potionsData]) => {
-			res.render("bad-brew", { ingredients : ingredientsData, potions : potionsData });
-			bodycounter = bodycounter > 0 ? 0 : bodycounter;
 			archive.length = 0;
 			collection;
-			console.log("page1 success" ,`bodycounter ${bodycounter}`);
+			res.render("bad-brew", {
+				ingredients: ingredientsData,
+				potions: potionsData,
+				collection,
+				bodycounter,
+				previousView,
+			});
+			console.log("page1 success", `bodycounter ${bodycounter}`);
 		})
 		.catch((err) => alert("home failed"));
 });
 
-// brewing - post route  
-app.post("/brew",(req,res) =>{
+// brewing - post route
+app.post("/brew", (req, res) => {
 	Promise.all([
 		fetchJson(IngrUrl),
 		fetchJson(potionsUrl),
-		fetchJson(potionsUrl)
+		fetchJson(potionsUrl),
+	]).then(([ingredientsData, potionsData, PData]) => {
+		let ingredients = req.body;
+		let matchFound = false;
+		let PotionId = null;
 
-	])
-	.then(([ingredientsData,potionsData,PData]) => {
+		let ingredient = Object.values(ingredients).map(Number);
+		// console.log('req body',ingredient,'array',Array.isArray(ingredient));
+		// console.log(potionsData[2],Array.isArray(potionsData));
 
-	let ingredients = req.body;
-	let matchFound = false;
-    let PotionId = null;
-
-	let ingredient = Object.values(ingredients).map(Number);
-	// console.log('req body',ingredient,'array',Array.isArray(ingredient));
-	// console.log(potionsData[2],Array.isArray(potionsData));
-	
-	if (!Array.isArray(ingredient)) {
-		return res.status(400).send('nop');
+		if (!Array.isArray(ingredient)) {
+			return res.status(400).send("nop");
 		}
 
-	
-	  	// console.log(PData.ingredients);
-	
-	    for( let i = 0; i < PData.length ;i++){
-		if(JSON.stringify(sortArray(ingredient)) === JSON.stringify(sortArray(PData[i].ingredients))){
-			matchFound = true;
-			archive.push(PotionId = PData[i].id);
+		// console.log(PData.ingredients);
+
+		for (let i = 0; i < PData.length; i++) {
+			if (
+				JSON.stringify(sortArray(ingredient)) ===
+				JSON.stringify(sortArray(PData[i].ingredients))
+			) {
+				matchFound = true;
+				archive.push((PotionId = PData[i].id));
+
+				console.log(
+					"--------------------------------------------------------------------------------"
+				);
+				console.log(
+					PData[i].name,
+					PData[i].id,
+					`archive content ${archive}`,
+					`archive match `,
+					JSON.stringify(sortArray(archive.map(Number))) ===
+						JSON.stringify([2, 3, 4])
+				);
+			}
+		}
+
+		let view = "./partials/bad-brew";
+		// let view = 'index';
+		let lives = 3;
+		if (matchFound) {
+			// level 1
 
 			let previousView = view;
 
