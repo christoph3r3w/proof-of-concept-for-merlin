@@ -1,5 +1,5 @@
 <% ingredients.slice(start, end).forEach(ingredient => { %>
-	<li value="<%= ingredient.id %>" tabindex="0">
+	<li data-value="<%= ingredient.id %>" tabindex="0">
 		
 		<p><%= ingredient.name %></p>
 		<img src="<%= ingredient.asset %>" alt="<%= ingredient.name %>" title="<%= ingredient.name %>" width="100" height="100">						
