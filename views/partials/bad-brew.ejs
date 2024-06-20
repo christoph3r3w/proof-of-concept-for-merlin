@@ -1,25 +1,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Nasty Potion</title>
-    <script>
- document.addEventListener('DOMContentLoaded', (event) => {
-            // Get the previous view from the URL parameters
-            const urlParams = new URLSearchParams(window.location.search);
-            const previousView = urlParams.get('previousView');
-
-            // Redirect back to the previous view after a delay
-            setTimeout(() => {
-                if (previousView) {
-                    window.location.href = previousView;
-                    console.log(previousView);
-                } else {
-                    window.location.href = '/brew'; // Default redirect if previousView is not found
-                }
-            }, 2000); // Adjust the delay as needed (2000 ms = 2 seconds)
-        });    </script>
+   
 </head>
 <%- include('./head') %>
 <%- include('./header',{header:''}) %>
+
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+               // Get the previous view from the URL parameters
+               const urlParams = new URLSearchParams(window.location.search);
+               const previousView = urlParams.get('previousView');
+               console.log(previousView,urlParams);
+   
+               // Redirect back to the previous view after a delay
+               setTimeout(() => {
+                   if (previousView) {
+                       window.location.href = previousView;
+                       console.log(previousView,urlParams);
+                   } else {
+                       window.location.href = '/brew'; // Default redirect if previousView is not found
+                       console.log('not found');
+                   }
+               }, 2000); // Adjust the delay as needed (2000 ms = 2 seconds)
+           });   
+ </script>
 
 <main class="page" style="position: relative;display: grid;place-content: center;">
 	<h1 style="color: greenyellow;width: 30vw; height: auto;">You mached this Nasty</h1>
