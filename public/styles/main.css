@@ -2,26 +2,32 @@
 *::before,
 *::after,
 html {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  /* appearance: none; */
-  text-decoration: none;
-  scroll-behavior: smooth;
-  perspective: 1000px;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	appearance: none;
+	text-decoration: none;
+	scroll-behavior: smooth;
+	perspective: 1000px;
 }
 
-/*////////////////// controls for pages */ 
-body:has(.start){
+/*////////////////// controls for pages */
+body:has(.start) {
+	header {
+		ul {
+			background-color: #33333318;
+		}
+	}
+
 	overflow: hidden;
-	.table{
-		inset-inline:4%;
+	.table {
+		inset-inline: 4%;
 		inset-block: -5%;
 		/* outline: solid palegoldenrod; */
 	}
 
-	.table:hover .mainGrid{
+	.table:hover .mainGrid {
 		translate: none;
 		translate: 0 5%;
 	 }
@@ -39,24 +45,23 @@ body:has(.start){
 	}
 
 	.mid_2 {
-		
-		.item{
+		.item {
 			display: none;
 		}
-		.start-btn{
+		.start-btn {
 			outline: none;
 			mix-blend-mode: difference;
-			a{
+			a {
 				color: white;
 				mix-blend-mode: difference;
 			}
 		}
 
-		&:hover .start-btn{
+		&:hover .start-btn {
 			transform: scale(2.5) rotateX(-5deg);
 			width: 25cqw;
 			height: auto;
-			a{
+			a {
 				box-shadow: 0 0 10px 10px rgb(191, 194, 218);
 				/* border-radius: 40px; */
 				
@@ -64,48 +69,51 @@ body:has(.start){
 		}
 	}
 
-	.menu{
+	.menu {
 		pointer-events: none;
 		transform-origin: center;
 		transform: rotate(90deg) !important;
 		inset-block: unset;
 		/* right:unset;
 		left: -2%; */
-		inset-inline: -3%;
-		top: -42%;
+		inset-inline: 0%;
+		top: -68%;
 		z-index: 100 !important;
 		width: 100%;
-
+		height: 100%;
 	}
 
-	.menu .aside_1{
-		transform: rotatey(-180deg)  scale(.98);
+	.menu .aside_1 {
+		transform: rotatey(-180deg) scale(0.98);
 		transform-origin: right;
-
 	}
-	
-	&:has(.table:hover) .aside_1{
+
+	&:has(.table:hover) .aside_1 {
 		transform: rotatey(-180deg);
-		opacity: .8;
+		opacity: 0.8;
 	}
 
-	.menu .aside_2{
-		ul,h2{
+	.menu .aside_2 {
+		/* height: 100%; */
+		width: 59%;
+		ul,
+		h2 {
 			display: none;
 		}
 	}
 
-	.menu .aside_2::after{
-		content: 'The book of potions';
+	.menu .aside_2::after {
+		content: "The book of potions";
 		top: 48%;
 		/* background-color: #fff; */
 		display: flex;
-		justify-content: center ;
-		/* height: fit-content; */
+		justify-content: center;
+		height: fit-content;
 		width: 100%;
 		transform: rotate(-90deg) scale(3.5);
 		font-size: 100%;
 	}
+}
 
 }
 
@@ -117,38 +125,41 @@ body:has(.pageOne){
 		pointer-events: none;
 	}
 }
-body:has(.pageTwo) .mainGrid > div:nth-of-type(-n + 2):not(:nth-of-type(6)):not(:nth-of-type(5)) {
-	opacity: .1;
+body:has(.pageTwo)
+	.mainGrid
+	> div:nth-of-type(-n + 2):not(:nth-of-type(6)):not(:nth-of-type(5)) {
+	opacity: 0.1;
 	pointer-events: none;
-	
 }
 
-body:has(.pageThree) .mainGrid > div:nth-of-type(-n + 1):nth-of-type(8):not(:nth-of-type(6)):not(:nth-of-type(5)) {
-	opacity: .1;
+body:has(.pageThree)
+	.mainGrid
+	> div:nth-of-type(-n + 1):nth-of-type(8):not(:nth-of-type(6)):not(
+		:nth-of-type(5)
+	) {
+	opacity: 0.1;
 	pointer-events: none;
-	
 }
 
-body:has(.pageFour) .mainGrid > div:nth-of-type(-n + 2):not(:nth-of-type(3)):not(:nth-of-type(5)) {
-	opacity: .1;
+body:has(.pageFour)
+	.mainGrid
+	> div:nth-of-type(-n + 2):not(:nth-of-type(3)):not(:nth-of-type(5)) {
+	opacity: 0.1;
 	pointer-events: none;
-	
 }
 
-
-
-
-
-body{
+body {
 	scrollbar-gutter: stable;
 	/* position: relative; */
 	/* width: 100%;
 	height: 100%; */
-	transform-style:preserve-3d;
-	-webkit-transform-style:preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	overflow: hidden;
 }
 
-header{
+header {
 	display: flex;
 	position: absolute;
 	top: 0;
@@ -157,25 +168,23 @@ header{
 	z-index: 1;
 }
 
-main{
+main {
 	/* display: flex; */
-	position:relative;
-	background-color:  palegoldenrod;
+	position: relative;
+	background-color: palegoldenrod;
 	height: 100dvh;
 	width: 100dvw;
 	background-image: url("/assests/download.png");
-	background-position: center ;
+	background-position: center;
 	background-size: cover;
 }
 
-
-
 /*//////////////// tabel of mixing */
 
-.table{
+.table {
 	position: absolute;
 	top: 8%;
-	right:50% ;
+	right: 50%;
 	left: -16%;
 	bottom: 8%;
 	z-index: 0;
@@ -184,58 +193,51 @@ main{
 	/* transform: scale3d(1 ,1 , 1); */
 	/* perspective: 1000px; */
 
-	padding:1rem;
-	color:white;
-	transition:1s;
-	gap:1rem;
-	
+	padding: 1rem;
+	color: white;
+	transition: 1s;
+	gap: 1rem;
 
-	display:grid;
+	display: grid;
 	grid-template-columns:
-  
-	  [side-start]
-	  1fr
-	  [mid-start]
-	  1fr
-	  [mid-end]
-	  1fr
-	  [side-end];
-  
-	 grid-template-rows:
-  
-	  [side-start]
-	  1fr
-	  [mid-start]
-	  1fr
-	  [mid-end]
-	  1fr
-	  [side-end];
-	
+		[side-start]
+		1fr
+		[mid-start]
+		1fr
+		[mid-end]
+		1fr
+		[side-end];
+
+	grid-template-rows:
+		[side-start]
+		1fr
+		[mid-start]
+		1fr
+		[mid-end]
+		1fr
+		[side-end];
 
 	@starting-style {
-		inset-inline:4%;
+		inset-inline: 4%;
 		inset-block: 0;
-		color:white;
-
+		color: white;
 	}
 
-	&:hover,&:focus-within{
+	&:hover,
+	&:focus-within {
 		left: 0;
 		right: 40%;
 		perspective: 1800px;
 		z-index: 3;
-		
 	}
 
-	&:hover .mainGrid{
+	&:hover .mainGrid {
 		translate: 4% 0;
-	 }
-
-    &:has(:hover) section.menu{
-	  transform: rotateY(-25deg) rotateX(65deg)           
-	  scale(.6);
 	}
 
+	&:has(:hover) section.menu {
+		transform: rotateY(-25deg) rotateX(65deg) scale(0.6);
+	}
 }
 
 /* //////////////////////// top row  */
@@ -295,7 +297,7 @@ main{
 
 .mid_2 {
 	position: relative;
-	
+
 	/* background-image: url(/public/assests/b8d6e6308676378220fb181bb48a15ae.gif); */
 	background-image: url("/assests/bed2591f723244f07bc4bf382f97103c.gif");
 	background-size: cover;
@@ -334,8 +336,8 @@ main{
 			opacity: 1;
 		}
 	}
-
-	> img{
+	/* background image */
+	> img {
 		position: absolute;
 		inset: 0;
 		width: 100%;
@@ -345,14 +347,18 @@ main{
 		/* z-index: -1; */
 		pointer-events: none;
 		/* outline: solid red; */
-		mix-blend-mode:overlay;
-		opacity: .2;
+		mix-blend-mode: overlay;
+		opacity: 0.2;
 		scale: 1.01;
 		/* animation: slow-rotate 30s infinite; */
-		
-
 	}
-  }
+}
+
+.mainGrid div:nth-of-type(n) {
+	display: grid;
+	place-items: center;
+	font-size: 3rem;
+	outline: solid lightslategrey;
 
 .mainGrid div:nth-of-type(n){
 	  display:grid;
@@ -363,16 +369,14 @@ main{
 	  /* position:absolute;
 	  inset: 20dvw; */
 	/*   box-shadow: 0px 0px 50px 5px black; */
-	  
+
 	/*   width:100%; */
 	/*   grid-column: mid; */
-	  
-	  
 }
 
 .mainGrid fieldset{
 	filter: blur(5px);
-	transition: .5s ease-out;
+	transition: 0.5s ease-out;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -380,7 +384,7 @@ main{
 	height: 100%;
 }
 
-.mainGrid:is(:hover, :focus-within) fieldset{
+.mainGrid:is(:hover, :focus-within) fieldset {
 	filter: blur(0px);
 }
 
@@ -390,14 +394,22 @@ main{
 	flex: 1;
 	flex-wrap: wrap;
 	place-content: center;
-	outline: solid inherit;
-
+	/* justify-items: center;
+	align-content: center; */
+	/* outline: solid blue; */
+	width: clamp(2rem, 50%, 4rem);
+	/* height: max-content; */
 }
 
-.mainGrid div:nth-of-type(n) label img{
+.mainGrid div:nth-of-type(n) label:has(input:checked) {
+	background-color: var(--ingredient_color);
+}
+
+.mainGrid div:nth-of-type(n) label img {
 	aspect-ratio: 1;
-	width: 4rem;
-	opacity: .1;
+	width: clamp(2rem, 90%, 4rem);
+	/* width: 100%; */
+	opacity: 0.1;
 }
 
 /* .mainGrid > div:nth-of-type(-n + 8):not(:nth-of-type(6)):not(:nth-of-type(5)) {
@@ -406,28 +418,31 @@ main{
 	
 } */
 
-/* ///////////////cauldron */
-.mid_2{
+/* /////////////////////////////////////cauldron */
+.mid_2 {
 	position: relative;
 }
 
-.item {
-
+.mid_2 .item {
 	/* outline:solid red; */
 	position: absolute;
 	top: 45%;
 	left: 48%;
 	width: 50px;
 	height: 50px;
-	background: #0091EA;
+	outline: none !important;
 	transform: translateX(-100px);
 	/* for text */
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	font-size: 30px;
-	color: #FFF;
-	/* animation: arc-move-anim 14s linear infinite ; */
+	color: #fff;
+	animation: arc-move-anim 14s linear infinite;
+	/* use */
+	.fast-rotate & {
+		animation-duration: 0.6s;
+	}
 }
 
 .i1 {
@@ -449,8 +464,8 @@ main{
 	--animation-te: calc(var(--animation-t) * -1);
 }
 .i4 {
-	--animation-p:100px;
-	--animation-m:translateY(var(--animation-p)) ;
+	--animation-p: 100px;
+	--animation-m: translateY(var(--animation-p));
 	--animation-t: 360deg;
 	--animation-te: calc(var(--animation-t) * -1);
 }
@@ -462,7 +477,7 @@ main{
 
 /* //////////////////////// - Sidebar */
 
-.menu{
+.menu {
 	/* outline: solid rgb(94, 255, 0); */
 	position: absolute;
 	width: min-content;
@@ -472,17 +487,17 @@ main{
 	display: grid;
 	grid-auto-flow: column;
 	gap: 2%;
-	scale: .9;
-	transition: .5s ;
+	scale: 0.9;
+	transition: 0.5s;
 	transition-property: transform;
 	/* transform-style:preserve-3d; */
 }
 
-aside{
+aside {
 	background-color: rgb(116, 181, 119);
 	/* outline: solid red; */
-	transition: .9s cubic-bezier(0.6, -0.28, 0.35, 0.57);
-	transition-property: opacity,transform;
+	transition: 0.9s cubic-bezier(0.6, -0.28, 0.35, 0.57);
+	transition-property: opacity, transform;
 	transform-origin: right;
 	
 	height: clamp(52rem,100%,90dvh);
@@ -608,31 +623,29 @@ body:has(.aside_1 ul > li:nth-last-of-type(n)[data-value="0"]:is(:hover, :focus-
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	border-top: .1px solid;
+	border-top: 0.1px solid;
 	padding-inline: 3%;
 
-	:nth-child(n){
-			/* outline: solid plum; */
-
+	:nth-child(n) {
+		/* outline: solid plum; */
 	}
 }
 
-.aside_2 li h2{
+.aside_2 li h2 {
 	width: fit-content;
 	margin-block: 1%;
 }
 
-.aside_2 li img{
+.aside_2 li img {
 	width: 43cqw;
 	height: 50%;
- 	/* transform:translateZ(300px)rotate3d(0,0,30deg) rotateX(50deg); */
+	/* transform:translateZ(300px)rotate3d(0,0,30deg) rotateX(50deg); */
 	transform-origin: bottom;
-	transition: .5s ease-out ;
-	transition-property: transform,filter;
+	transition: 0.5s ease-out;
+	transition-property: transform, filter;
 	z-index: 3;
 	object-fit: cover;
 	object-position: center;
-
 }
 
 /* item select for aside 2 */ /* can be used to find where ingridients for the potion are */
