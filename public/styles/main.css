@@ -722,61 +722,133 @@ body:has(.aside_2 ul > li:nth-of-type(3):is(:hover, :focus-within))  .mainGrid  
 			z-index: 3;
 			animation: float 6s ease-in-out 2s infinite ;
 
-		}
-	}
-	
+/* anmitions and toggle classes */
+
+.check::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	/* background-color: rgba(0, 128, 0, 0.358); */
+	outline: 2px;
+	outline-offset: 0px;
+	animation: check 2s ease forwards;
 }
 
-.page:has(.menu:is(:hover, :focus-within)) .table{
+.menu-flip {
+	/* animation: flip 2s forwards 10ms; */
+	transition: 0.7s ease-in-out;
+	@starting-style {
+		pointer-events: none;
+		transform: translateY(-300px) translateX(-50%) rotate(90deg);
+		inset-block: unset;
+		right: unset;
+		top: -42%;
+		left: 32%;
+		z-index: 100;
+	}
+
+	.aside_1 {
+		@starting-style {
+			transform: rotatey(-180deg) scale(0.98);
+			z-index: 0;
+		}
+	}
+}
+
+.itemSelect {
+	background-color: powderblue;
+	box-shadow: 1px 1px 77px 90px rgba(176, 224, 230, 0.377);
+	/* animation: float 1s .5s; */
+	transition: 0.5s;
 	z-index: 0;
-	filter: blur(1px)
+	/* scale: .4; */
+}
+
+.fast-rotate {
+	background-color: aqua;
+}
+@keyframes check {
+	0% {
+		outline: solid transparent;
+	}
+
+	50% {
+		outline: solid yellowgreen;
+		outline-offset: 5px;
+	}
+	100% {
+		outline: yellowgreen;
+		outline-offset: -9px;
+	}
+}
+
+@keyframes flip {
+	to {
+		transform: rotate(-90deg);
+	}
 }
 
 @keyframes float {
 	0% {
-		transform: translateY(0px) rotateY(-31deg) rotateX(-5deg) rotateZ(22deg) scale(1.1) skew(24deg, -15deg);
-	  }
-	  15%,60%,85%{
-		transform: translateY(3px) rotateY(-33deg) rotateX(-6deg) rotateZ(22deg) scale(1.1) skew(24deg, -15deg);
-	  }
-	25%,75%{
-		transform: translateY(-13px) rotateY(-35deg) rotateX(-7deg) rotateZ(22deg) scale(1.1) skew(24deg, -15deg);
+		transform: translateY(0px) rotateY(-31deg) rotateX(-5deg) rotateZ(22deg)
+			scale(1.1) skew(24deg, -15deg);
+	}
+	15%,
+	60%,
+	85% {
+		transform: translateY(3px) rotateY(-33deg) rotateX(-6deg) rotateZ(22deg)
+			scale(1.1) skew(24deg, -15deg);
+	}
+	25%,
+	75% {
+		transform: translateY(-13px) rotateY(-35deg) rotateX(-7deg) rotateZ(22deg)
+			scale(1.1) skew(24deg, -15deg);
 	}
 
-	  50% {
-		transform: translateY(-10px) rotateY(-31deg) rotateX(-6deg) rotateZ(22deg) scale(1.1) skew(24deg, -15deg);
-	  }
-	  100% {
-		transform: translateY(0px) rotateY(-31deg) rotateX(-5deg) rotateZ(22deg) scale(1.1) skew(24deg, -15deg);
-	  }
+	50% {
+		transform: translateY(-10px) rotateY(-31deg) rotateX(-6deg) rotateZ(22deg)
+			scale(1.1) skew(24deg, -15deg);
+	}
+	100% {
+		transform: translateY(0px) rotateY(-31deg) rotateX(-5deg) rotateZ(22deg)
+			scale(1.1) skew(24deg, -15deg);
+	}
 }
 
 @keyframes float-1 {
 	0% {
-		transform: translateY(0px) rotateY(-31deg) rotateZ(22deg) scale(1.1) skew(24deg, -15deg);
-	  }
-	  15%,60%,85%{
-		transform: translateY(3px) rotateY(-33deg) rotateZ(22deg) scale(1.1) skew(24deg, 15deg);
-	  }
-	25%,75%{
-		transform: translateY(-13px) rotateY(-35deg) rotateZ(22deg) scale(1.1) skew(24deg, 15deg);
+		transform: translateY(0px) rotateY(-31deg) rotateZ(22deg) scale(1.1)
+			skew(24deg, -15deg);
+	}
+	15%,
+	60%,
+	85% {
+		transform: translateY(3px) rotateY(-33deg) rotateZ(22deg) scale(1.1)
+			skew(24deg, 15deg);
+	}
+	25%,
+	75% {
+		transform: translateY(-13px) rotateY(-35deg) rotateZ(22deg) scale(1.1)
+			skew(24deg, 15deg);
 	}
 
-	  50% {
-		transform: translateY(-10px) rotateY(-31deg) rotateZ(22deg) scale(1.1) skew(24deg, 15deg);
-	  }
-	  100% {
-		transform: translateY(0px) rotateY(-31deg) rotateZ(22deg) scale(1.1) skew(24deg, -15deg);
-	  }
+	50% {
+		transform: translateY(-10px) rotateY(-31deg) rotateZ(22deg) scale(1.1)
+			skew(24deg, 15deg);
+	}
+	100% {
+		transform: translateY(0px) rotateY(-31deg) rotateZ(22deg) scale(1.1)
+			skew(24deg, -15deg);
+	}
 }
 
 /* slow rotate */
 @keyframes slow-rotate {
-
-	from{
-		transform: rotateZ(0deg) ;
+	from {
+		transform: rotateZ(0deg);
 	}
-	to{
+	to {
 		transform: rotateZ(360deg);
 	}
 }
@@ -784,17 +856,17 @@ body:has(.aside_2 ul > li:nth-of-type(3):is(:hover, :focus-within))  .mainGrid  
 /* arc moving  */
 
 @keyframes arc {
-	0%{
-	  transform: translate(-50%, -50%) rotate(0deg);
+	0% {
+		transform: translate(-50%, -50%) rotate(0deg);
 	}
-	100%{
-	  transform: translate(-50%, -50%) rotate(180deg);
+	100% {
+		transform: translate(-50%, -50%) rotate(180deg);
 	}
-  }
+}
 
-  /* cauldron stirring  */
+/* cauldron stirring  */
 
-  @keyframes arc-move-anim {
+@keyframes arc-move-anim {
 	0% {
 		transform: rotate(0deg) var(--animation-m) rotate(0deg);
 	}
@@ -804,8 +876,7 @@ body:has(.aside_2 ul > li:nth-of-type(3):is(:hover, :focus-within))  .mainGrid  
 	} */
 
 	100% {
-		transform: rotate(var(--animation-t)) var(--animation-m) rotate(var(--animation-te));
+		transform: rotate(var(--animation-t)) var(--animation-m)
+			rotate(var(--animation-te));
 	}
 }
-
-
