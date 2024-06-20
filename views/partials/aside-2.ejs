@@ -1,8 +1,8 @@
 <% potions.slice(start, end).forEach(postion => { %>
 
-	<li class="item<%= postion.id %>" title="<%= postion.name %>" rarity="<%= postion.rarity %>" data-value="<%= postion.ingredients %>" tabindex="0">
+	<li class="item<%= postion.id %>" title="<%= postion.name %>" data-rarity="<%= postion.rarity %>" data-value="<%= postion.ingredients %>" data-id="<%= postion.id %>" >
 		<h2><%= postion.name %></h2>
-		<img src="<%= postion.asset %>" >
+		<img src="<%= postion.asset %>" alt="<%= postion.name %>">
 		<p><%= postion.description %></p>
 		<p><%= postion.rarity %></p>
 		<p>
