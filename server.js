@@ -1,5 +1,5 @@
 import express, { json } from "express";
-import fetchJson from "./helpers/fetch-json.js"
+import fetchJson from "./helpers/fetch-json.js";
 
 const app = express();
 
@@ -13,7 +13,7 @@ app.set("view engine", "ejs");
 // dont know what this does
 app.use(express.urlencoded({ extended: true }));
 
-// merlin book of potion api 
+// merlin book of potion api
 const apiUrl = "https://potion-api-jet.vercel.app/";
 
 // all ingridients endpoint
@@ -21,25 +21,24 @@ const IngrUrl = `${apiUrl}ingredients`;
 const potionsUrl = `${apiUrl}potions`;
 
 // level archive
-let archive = app.locals.storage = [];
+let archive = (app.locals.storage = []);
 
 // new postions storage
-let collection = app.locals.storage = [] ;
+let collection = (app.locals.storage = []);
 
 // page refresh counter
-var bodycounter = app.locals.visitCounter = 0;
+var bodycounter = (app.locals.visitCounter = 0);
 
 // sort function
 function sortArray(arr) {
-	return arr.map(Number).sort((a, b) => a - b); 
-  }
+	return arr.map(Number).sort((a, b) => a - b);
+}
 // no duplication function (set)
-  function getUniqueValues(array) {
-    return [...new Set(array)];
+function getUniqueValues(array) {
+	return [...new Set(array)];
 }
 
-
-// homepage 
+// homepage
 app.get("/", (req, res) => {
 	Promise.all([
 		fetchJson(IngrUrl),
@@ -49,9 +48,9 @@ app.get("/", (req, res) => {
 			res.render("index.ejs", { ingredients : ingredientsData, potions : potionsData });
 			
 
-			console.log("home success",	bodycounter	);
+			console.log("home success", bodycounter);
 		})
-		.catch(err => alert("home failed"));
+		.catch((err) => alert("home failed"));
 });
 
 
@@ -68,8 +67,8 @@ app.get("/brew", (req, res) => {
 			collection;
 			console.log("page1 success" ,`bodycounter ${bodycounter}`);
 		})
-		.catch(err => alert("home failed"));
-})
+		.catch((err) => alert("home failed"));
+});
 
 // nasty brew
 app.get("/brew/bad-brew", (req, res) => {
@@ -84,10 +83,8 @@ app.get("/brew/bad-brew", (req, res) => {
 			collection;
 			console.log("page1 success" ,`bodycounter ${bodycounter}`);
 		})
-		.catch(err => alert("home failed"));
-})
-
-
+		.catch((err) => alert("home failed"));
+});
 
 // brewing - post route  
 app.post("/brew",(req,res) =>{
@@ -240,7 +237,7 @@ app.post("/brew",(req,res) =>{
 // ports //
 app.set("port", process.env.PORT || 8777);
 
-app.listen(app.get("port"), function(){
+app.listen(app.get("port"), function () {
 	console.log(`Test link ${app.get("port")}`);
 	console.log("Server listening on port " + '👉 ' + `http://localhost:${app.get("port")}`+ ' 👈');
 });
