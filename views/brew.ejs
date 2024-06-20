@@ -2,8 +2,7 @@
 <%- include('./partials/header',{header:'page1'}) %>
 
 
-
-	<main class="page pageOne" style="--ingridient_id:<%= ingredients.id %>">
+	<main class="page pageOne" >
 
 
 
@@ -39,11 +38,11 @@
 				</div>  
 
 				<div class="mid mid_2" tabindex="5" >
-				  <div class="item i1"> <button tabindex="5"> 5.1</button></div>
-				  <div class="item i2"> <button tabindex="5" > 5.2</button></div>
-				  <div  class="item i3"> <button tabindex="5" > 5.3</button></div>
-				  <div class="item i4"> <button tabindex="5" > 5.4</button></div>
-				  <div > <a href="/" tabindex="5" > -5.5</a></div>
+				  <div class="item i1"> <p tabindex="5"> item1</p></div>
+				  <div class="item i2"> <p tabindex="5" > item2</p></div>
+				  <div  class="item i3"> <p tabindex="5" > item3</p></div>
+				  <div class="item i4"> <p tabindex="5" > item4</p></div>
+				  <div > <button type="submit" tabindex="5" > Stir</button></div>
 
 				</div>
 
@@ -83,7 +82,7 @@
 			
 		</section>
 		<!-- menu -->
-		<section class="menu"> 
+		<section class="menu menu-flip"> 
 			<aside class="aside_1">
 				<!-- a for-each for all the ingridients  -->
 				<h2> Ingredients list</h2>
