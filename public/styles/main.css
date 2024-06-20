@@ -61,7 +61,6 @@ body:has(.start) {
 			a {
 				box-shadow: 0 0 10px 10px rgb(191, 194, 218);
 				/* border-radius: 40px; */
-				
 			}
 		}
 	}
@@ -112,8 +111,39 @@ body:has(.start) {
 	}
 }
 
+header {
+	color: white;
+	position: sticky;
+	top: 0;
+	inset-inline: 0;
+	display: grid;
+	place-content: center;
+	height: 4%;
 }
 
+header ul {
+	background-color: #333;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	width: 100%;
+	padding-top: 0.5%;
+	padding-inline-start: 2%;
+}
+
+header li {
+	font-size: clamp(1rem, 30%, 3rem);
+	/* width: 100%; */
+	flex: 1;
+	:hover {
+		background-color: #d4d4d488;
+	}
+}
+
+header li a {
+	color: white;
+	mix-blend-mode: multiply;
+}
 
 /* ///////////////main content  */
 body:has(.pageOne) {
