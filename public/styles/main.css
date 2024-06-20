@@ -547,55 +547,54 @@ aside {
 	width: 25rem;
 	/* backdrop-filter: blur(20px); */
 	background-image: url("/assests/6d8e9a750b08665e11dc11e8e8bdec29.jpg");
-
 }
 
 /* //////////// sidebar ingridients list  */
 
-.aside_1{
+.aside_1 {
 	position: relative;
 	z-index: 0;
-	
+	transition: 1.3s;
 }
 
-.aside_1 > ul{
+.aside_1 > ul {
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	gap:1%;
+	/* gap:1%; */
 	overflow-y: scroll;
-	/* overflow-x: hidden; */
+	overflow-x: auto;
 	height: 96%;
-	scrollbar-width:none;
+	scrollbar-width: none;
 	-webkit-scrollbar-width: none;
-	transition: .5s;
 
-	&:hover{
-		scrollbar-width:thin;
+	&:hover {
+		scrollbar-width: thin;
 	}
 
 	/* scroll-snap-type: mandatory; */
 	/* background-color: #EDA48D; */
 }
 
-.aside_1 li{
+.aside_1 li {
 	position: relative;
 	padding-block: 8%;
 	padding-inline: 3%;
 	height: 220px;
-	outline: solid;
+	/* outline: 1px solid; */
 
-	&:hover{
-		transform: scale(1.1);
+	&:hover {
+		/* translate: -100px 0; */
+		background-color: rgba(118, 118, 118, 0.329);
 	}
 }
 
-.aside_1 img{
+.aside_1 img {
 	/* display: none; */
 	position: relative;
-	
+
 	/* filter: brightness(70%); */
-	object-fit:fill;
+	object-fit: fill;
 	object-position: center;
 	max-height: 100%;
 	max-width: fit-content;
@@ -604,12 +603,12 @@ aside {
 }
 
 /* //////// css item select for aside 1  */
-body:has(.aside_1 ul > li:nth-last-of-type(n)[data-value="0"]:is(:hover, :focus-within))  .mainGrid  label[data-value="0"]{
+/* body:has(.aside_1 ul > li:nth-last-of-type(n)[data-value="0"]:is(:hover, :focus-within))  .mainGrid  label[data-value="0"]{
 	position: relative;
 	background-color: palegoldenrod;
 	box-shadow: 1px 1px 77px 90px rgba(238, 232, 170, 0.511);
 	animation: float 3s .5s;
-} 
+}  */
 /* body:has(.aside_1 ul > li:nth-last-of-type(n)[data-value="1"]:hover)  .mainGrid  label[data-value="1"]{
 	background-color: powderblue;
 	box-shadow: 1px 1px 77px 90px rgba(176, 224, 230, 0.377);
@@ -623,39 +622,36 @@ body:has(.aside_1 ul > li:nth-last-of-type(n)[data-value="0"]:is(:hover, :focus-
 
 /* //////////// sidebar potions list  */
 
-.aside_2{
+.aside_2 {
 	position: relative;
 	z-index: 0;
 }
 
-.aside_2::after{
+.aside_2::after {
 	content: "";
 	position: absolute;
-
-
 }
 
-.aside_2 > ul{
+.aside_2 > ul {
 	position: relative;
 	display: grid;
 	grid-auto-flow: row;
-	grid-auto-rows:32% ;
+	grid-auto-rows: 32%;
 	overflow-y: scroll;
 	overflow-x: hidden;
 	height: 96%;
-	scrollbar-width:none;
+	scrollbar-width: none;
 	-webkit-scrollbar-width: none;
-
 }
 
-.aside_2 li{
+.aside_2 li {
 	position: relative;
 	width: 100%;
 	max-height: fit-content;
 	object-position: center;
 	object-fit: cover;
-	container-name:list ;
-	container-type:inline-size ;
+	container-name: list;
+	container-type: inline-size;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
